@@ -15,9 +15,9 @@ exports.sendMessage = async (req, res) => {
 
 exports.getMessage = async (req, res) => {
   try {
-    const data = await producer.consumeMessage();
-    console.log(data)
-    res.send(data)
+    await producer.consumeMessage();
+    // console.log(data)
+    res.send({msg :"Data recived"})
    
   } catch (error) {
     res.send(error)
